@@ -51,10 +51,6 @@ static NSString *kIdentifier = @"kIdentifier";
     self.player.WWANAutoPlay = YES;
     
     @zf_weakify(self)
-    self.player.orientationWillChange = ^(ZFPlayerController * _Nonnull player, BOOL isFullScreen) {
-        kAPPDelegate.allowOrentitaionRotation = isFullScreen;
-    };
-    
     self.player.playerDidToEnd = ^(id  _Nonnull asset) {
         @zf_strongify(self)
         if (self.player.playingIndexPath.row < self.dataSource.count - 1) {
@@ -270,6 +266,7 @@ static NSString *kIdentifier = @"kIdentifier";
         _controlView = [ZFPlayerControlView new];
         _controlView.fastViewAnimated = YES;
         _controlView.horizontalPanShowControlView = NO;
+        _controlView.showCustomStatusBar = YES;
     }
     return _controlView;
 }
