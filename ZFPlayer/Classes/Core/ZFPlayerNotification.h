@@ -50,6 +50,8 @@ typedef NS_ENUM(NSUInteger, ZFPlayerBackgroundState) {
 
 @property (nonatomic, copy, nullable) void(^audioInterruptionCallback)(AVAudioSessionInterruptionType interruptionType);
 
+@property (nonatomic, copy, nullable) void(^audioInterruptionNotificationCallback)(NSNotification * notification);
+
 - (void)addNotification;
 
 - (void)removeNotification;
