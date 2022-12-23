@@ -108,6 +108,7 @@
     NSDictionary *interuptionDict = notification.userInfo;
     AVAudioSessionInterruptionType interruptionType = [[interuptionDict valueForKey:AVAudioSessionInterruptionTypeKey] integerValue];
     if (self.audioInterruptionCallback) self.audioInterruptionCallback(interruptionType);
+    if (self.audioInterruptionNotificationCallback) self.audioInterruptionNotificationCallback(notification);
 }
 
 @end
